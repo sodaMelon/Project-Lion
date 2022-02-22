@@ -7,6 +7,7 @@ import project.lion.mission2.domain.dto.PostDto;
 import java.util.ArrayList;
 import java.util.List;
 
+@ResponseBody
 @RestController
 public class BasicController {
 

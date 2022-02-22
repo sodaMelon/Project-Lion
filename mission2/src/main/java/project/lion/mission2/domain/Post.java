@@ -2,10 +2,12 @@ package project.lion.mission2.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Builder
 public class Post {
     private int id; //Primary Key
