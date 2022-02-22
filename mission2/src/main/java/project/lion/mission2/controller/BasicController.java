@@ -12,16 +12,17 @@ import java.util.List;
 public class BasicController {
 
     private List<Post> postList;
+    private int idCursor = -1;
 
     public BasicController(){
         this.postList = new ArrayList<>();
     }
 
-
-    @PostMapping("/make-new-post")
+    @PostMapping("/make-new-post")//새 게시글 쓰기(create)
     public String make(@RequestBody PostDto postDto) {
-
+        idCursor++;
         Post newPost = new Post().builder()
+                .id(idCursor)
                 .board(postDto.getBoard())
                 .title(postDto.getTitle())
                 .content(postDto.getContent())
@@ -36,29 +37,41 @@ public class BasicController {
 
     }
 
-    @GetMapping("/list") //전체 읽기
+    @GetMapping("/") //전체 게시글 읽기
     public List<Post> readAllPost() {
         return this.postList;
     }
 
+    @GetMapping("/{board}") //특정 게시판 읽기
+    public List<Post> selectPostByBoard(@PathVariable ("board") String targetBoard){
+        List<Post> matchedByBoard = new ArrayList<>();
+        for(Post post: postList){
+            if (post.getBoard().equals( targetBoard)){
+                matchedByBoard.add(post);
+            }
+        }
+        return matchedByBoard;
+    }
+
     @GetMapping("/post/{id}") //특정 글번호 읽기
-    public Post read(@PathVariable ("id") int id) {
+    public Post readOnePost(@PathVariable ("id") int id) {
         return this.postList.get(id);
     }
 
-    @PutMapping("/update/{id}") //특정 글번호 게시판 변경하기,
-    public Post update(@PathVariable ("id") int id, @PathVariable ("board") String newBoard) {
-        Post targetPost = postList.get(id);
+    @PutMapping("/update/{id}") //특정 글번호로 게시판 변경하기(update)
+    public Post moveAnotherBoard(@PathVariable ("id") String id, @RequestBody String newBoard) {
+        int idNumber = Integer.parseInt(id);
+        Post targetPost = postList.get(idNumber);
         targetPost.setBoard(newBoard);
-        postList.set(id, targetPost);
-        return this.postList.get(id);
+        postList.set(idNumber, targetPost);
+        return this.postList.get(idNumber);
     }
 
-    @PutMapping("/delete/{id}") //특정 글번호 게시판 변경하기,
-    public String delete(@PathVariable ("id") int id, @PathVariable ("password") String password) {
+    @DeleteMapping("/delete/{id}") //특정 글번호로 해당 게시글 삭제하기(delete)
+    public String delete(@PathVariable ("id") int id, @RequestBody String password) {
         Post targetPost = postList.get(id);
         if (! targetPost.getPassword().equals(password) ) {
-            return "삭제 실패";
+            return "삭제 실패, 비밀번호가 틀립니다";
         }
         return "삭제 성공";
     }
