@@ -73,6 +73,7 @@ public class BasicController {
         if (! targetPost.getPassword().equals(password) ) {
             return "삭제 실패, 비밀번호가 틀립니다";
         }
+        postList.remove(id);
         return "삭제 성공";
     }
 
