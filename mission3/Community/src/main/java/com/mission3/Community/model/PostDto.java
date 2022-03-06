@@ -1,9 +1,6 @@
 package com.mission3.Community.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,17 +14,6 @@ public class PostDto {
     private String password;
     private Long boardId;
 
-    @Override
-    public String toString() {
-        return "PostDto{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", writer='" + writer + '\'' +
-                ", password='" + password + '\'' +
-                ", boardId=" + boardId +
-                '}';
-    }
 
     public PostDto passwordMasked(){
         return new PostDto(

@@ -13,13 +13,11 @@ import java.util.Collection;
 @RequestMapping("board")
 public class BoardController {
     private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+    private final BoardRepository boardRepository;
 
     public BoardController(BoardRepository boardRepository) {
         this.boardRepository = boardRepository;
     }
-
-    private final BoardRepository boardRepository;
-
 
     @PostMapping
     public ResponseEntity<BoardDto> createBoard(@RequestBody BoardDto dto) {
