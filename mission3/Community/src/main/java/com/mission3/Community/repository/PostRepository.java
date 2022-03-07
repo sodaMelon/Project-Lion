@@ -1,13 +1,17 @@
 package com.mission3.Community.repository;
 
-import com.mission3.Community.model.PostDto;
+import com.mission3.Community.model.Post;
+import com.mission3.Community.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
-public interface PostRepository {
-    PostDto create(Long boardId, PostDto dto);
-    PostDto read(Long boardId, Long postId);
-    Collection<PostDto> readAll(Long boardId);
-    boolean update(Long boardId, Long postId, PostDto dto);
-    boolean delete(Long boardId, Long postId, String password);
+@Repository
+public interface PostRepository extends JpaRepository<Post, Long> {
+/*    Post create(Long boardId, Post dto);
+    Post read(Long boardId, Long postId);
+    Collection<Post> readAll(Long boardId);
+    boolean update(Long boardId, Long postId, Post dto);
+    boolean delete(Long boardId, Long postId, String password);*/
 }

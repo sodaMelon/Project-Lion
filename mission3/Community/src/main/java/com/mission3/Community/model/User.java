@@ -2,9 +2,7 @@ package com.mission3.Community.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,6 +13,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue
+    @Column(name="user_id")
     private Long id;
     private String writer;
     private String password;
