@@ -21,4 +21,16 @@ public class Board {
     @Column(name="board_id")
     private Long id;
     private String name;
+
+    public Board(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                "}\n";
+    }
 }
