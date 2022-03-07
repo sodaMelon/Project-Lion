@@ -1,5 +1,5 @@
 # project-lion
-## mission - 2 : basic
+## mission - 3 : basic
 ### 커뮤니티 사이트에 데이터베이스 추가
 아쉬운 점: 
 - 캡슐화 안됨 (@Service 로 분리하는게 바람직함...)
