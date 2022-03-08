@@ -17,6 +17,8 @@ public class User {
     private Long id;
     private String writer;
     private String password;
+    @OneToOne
+    private Area area;
 
     public User(String writer, String password) {
         this.writer = writer;
