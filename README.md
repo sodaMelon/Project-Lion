@@ -12,8 +12,8 @@ Porject Lion의 강의를 듣고 수행한 미션 결과를 Branch로 기록하�
 - Challenge : 게시글에 파일 첨부하기 [미션 내용](https://github.com/sodaMelon/project-lion/issues/4)
 
 ### Mission3
-- Basic : 추후 공개
-- Challenge :
+- Basic :커뮤니티 사이트에 데이터베이스 추가 [Branch](https://github.com/sodaMelon/project-lion/tree/mission-3)
+- Challenge : 목적을 가진 커뮤니티 사이트 만들기 [Branch](https://github.com/sodaMelon/project-lion/tree/mission-3-c)
 
 ### Mission4
 - Basic : 추후 공개
