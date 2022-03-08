@@ -20,7 +20,7 @@ public class Shop {
     @OneToOne(mappedBy = "Shop")
     private User user;
 
-    public Area findShopArea(Shop shop){
+    public Area findShopAreaByUser(Shop shop){
         return shop.getUser().getArea();
     }
 }
