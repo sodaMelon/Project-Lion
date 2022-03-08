@@ -22,6 +22,12 @@ public class User {
     @JoinColumn(name = "shop_id")
     private Area area;
 
+    public void isShopkeeper(boolean fact) {
+        Shopkeeper = fact;
+    }
+
+    private boolean Shopkeeper;
+
     public User(String writer, String password) {
         this.writer = writer;
         this.password = password;
