@@ -1,5 +1,6 @@
 # project-lion
 ## mission - 3 : basic
+- [★베이직과제 말고 챌린지과제(미션3)를 확인하고 싶다면?! 링크 클릭 !!!!](https://github.com/sodaMelon/project-lion/tree/mission-3-c)
 ### 커뮤니티 사이트에 데이터베이스 추가
 아쉬운 점: 
 - 캡슐화 안됨 (@Service 로 분리하는게 바람직함...)
