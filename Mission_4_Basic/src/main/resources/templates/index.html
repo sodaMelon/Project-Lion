@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html       lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<div sec:authorize="isAnonymous()">
+    <h1>HOME for Basic mission</h1>
+
+    <button onclick="location.href = '/user/sign-up'">회원가입</button>
+    <button onclick="location.href = '/user/login'">로그인</button>
+</div>
+
+<div sec:authorize="isAuthenticated()">
+    <h2>
+         <span sec:authentication="name"></span>님, 반가워요♡
+    </h2>
+
+
+    <form th:action="@{/user/logout}" method="post">
+        <input type="submit" th:value="logout"/>
+    </form>
+</div>
+</body>
+</html>

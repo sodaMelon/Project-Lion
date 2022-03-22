@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Signup</title>
+</head>
+<body>
+<div>
+    <div>
+        <input type="text" id="username" placeholder="아이디">
+    </div>
+    <div>
+        <input type="password" id="password" placeholder="비밀번호">
+    </div>
+    <div>
+        <input type="password" id="password_check" placeholder="비밀번호 확인">
+    </div>
+    <div>
+        <input type="radio" id="seocho" name="area" value="1" checked="checked">
+        <label for="seocho">서울시 서초구 서초동, 37.4877° N, 127.0174° E</label>
+    </div>
+    <div>
+        <input type="radio" id="yeoksam" name="area" value="2">
+        <label for="yeoksam">서울시 강남구 역삼동, 37.4999° N, 127.0374° E</label>
+    </div>
+    <div>
+        <input type="radio" id="samseong" name="area" value="3">
+        <label for="samseong">서울시 강남구 삼성동, 37.5140° N, 127.0565° E</label>
+    </div>
+    <div>
+        is shop owner&nbsp;<input type="checkbox" id="is_shop_owner"><br>
+    </div>
+    <button onclick="signUp()">회원가입</button>
+</div>
+</body>
+</html>

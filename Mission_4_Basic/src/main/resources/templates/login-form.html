@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+
+
+<body>
+<h2>로그인페이지에 오신것을 환영합니다</h2>
+<h3>방금 가입하신 아이디를 입력해주세요</h3>
+<form th:action="@{/user/login}" method="post">
+    id:<input type="text" name="username" placeholder="아이디" /><br>
+    password:<input type="password" name="password" placeholder="비밀번호" />
+    <button type="submit">로그인</button>
+</form>
+</body>
+</html>

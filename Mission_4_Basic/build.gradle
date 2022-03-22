@@ -1,46 +1,31 @@
-buildscript {
-	repositories {
-		mavenLocal()
-		maven { url 'https://maven.aliyun.com/repository/google/' }
-		maven { url 'https://maven.aliyun.com/repository/public/' }
-		maven { url 'https://maven.aliyun.com/repository/spring/' }
-		maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
-		maven { url 'https://maven.aliyun.com/repository/spring-plugin/' }
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.5.9")
-		classpath "io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE"
-	}
-}
-
 plugins {
-	id 'java'
+    id 'org.springframework.boot' version '2.5.10'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
-apply plugin: "org.springframework.boot"
-apply plugin: "io.spring.dependency-management"
-
-group = 'dev.aquashdw'
+group = 'springboot.mission'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
-	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'mysql:mysql-connector-java'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
