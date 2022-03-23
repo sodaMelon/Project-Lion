@@ -8,6 +8,7 @@ Porject Lion의 강의를 듣고 수행한 미션 결과를 Branch로 기록하�
 - Challenge : 영상 https://youtu.be/8bzvsIB4uL0
 https://postimg.cc/R6FC8kBt
 캡처누락
+- 챌린지 미션 보충영상 : https://youtu.be/8bzvsIB4uL0 커스텀필터 역할을 수행하는 클래스는 MyFilter입니다.
 
 ### etc.
 챌린지 영상을 윈도우키 +G 게임녹화로 찍었는데, 인텔리제이창만 녹화되서 ㅠㅁㅠ...... 챌린지에대한 캡처만추가했습니다..(사실 gui가 없어도 로그보고 이해할수있는부분이지만요 ㅠ)
